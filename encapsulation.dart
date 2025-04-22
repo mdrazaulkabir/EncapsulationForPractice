@@ -1,9 +1,8 @@
-// import 'dart:async';
-// import 'dart:js';
+
 
 void main(){
 
-  //default private constructor in not possible in dart
+  //default private constructor in not possible in encapsulation
   //Person person=Person(_name: "kabir",_age: 23,_gmail: "razaulkabir13579@gmail.com");
 
   Person person=Person("kabir", 23, "kabir@gmail.com");

@@ -22,14 +22,10 @@ class Person1{
 
 
 
-
-
-
-
 //here 3 rule is right 
 
 //process 1:
-//you can't return like this way ,,but one value can return this way 
+//you can't return like this way ,,,because you can only one value can return this way 
 //  String? getName(){
 //   return _name;
 //   return -_age;
@@ -50,19 +46,10 @@ class Person1{
 
 
 
-
-
-
-
-
-
-
-
-
-//this is not possible in dart for set
-//set setName(String name, int age, double cgp) => _name=name, _age=age, _cgp=cgp;
-
-
+/* 
+this is not possible in dart for set
+set setName(String name, int age, double cgp) => _name=name, _age=age, _cgp=cgp;
+*/
 
 // 2 rule one is individual another is set all value
 
@@ -74,7 +61,7 @@ class Person1{
 
 
 //process2:
-//Method to set all values at once (it's is useable )
+//Method to set all values at once (it's is useable )     //accept because you can set multiple value
 
  setName(String name, int age, double cgp){ 
     // _name=name;
