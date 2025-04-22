@@ -1,12 +1,13 @@
-import 'person1.dart';
+import 'VVIperson1.dart';
 
 void main(){
   Person1 person1=Person1(null, 23, 3.9);
 
-  /*this two line (not possible) because now they are seperately two file 
-   now if you want can should use getter or setter mathod */                 //vvi
-  // print(person1._name);
-  // person1._display1();
+  /*here two line (not possible) because now they are seperately two file 
+   now if you want can should use getter or setter mathod                  //vvi
+   print(person1._name);
+   person1._display1();
+  */
 
 
 
