@@ -42,23 +42,63 @@ In this example below, there is a class named BankAccount with one private
 property _balance. There is one getter balance to read the value of the property. 
 There are methods deposit and withdraw to update the value of the _balance.
 */
+
+//solution 1
+// class BankAccount{
+//   double? _balance;
+//   BankAccount(this._balance);
+//   get balance=>_balance;
+//   void setDeposit(double? balance){
+//     _balance= _balance!+balance!;
+//   }
+//   void setWithdraw(double balance){
+//     _balance=_balance!-balance;
+//   }
+// }
+// void main(){
+//   BankAccount bankAccount=BankAccount(23);
+//   bankAccount.setDeposit(100);
+//   print("Deposit ${bankAccount.balance}");
+//   bankAccount.setWithdraw(50);
+//   print("Withdraw ${bankAccount.balance}");
+// }
+
+
+
+//solution2:
+import 'dart:io';
 class BankAccount{
-  double? _balance;
-  BankAccount(this._balance);
+  double _balance=0;
   get balance=>_balance;
-  void setDeposit(double? balance){
-    _balance= _balance!+balance!;
+  void setDeposit(double balance){
+    _balance +=balance;
+    print("Successfully deposit $balance tk!");
   }
   void setWithdraw(double balance){
-    _balance=_balance!-balance;
+    if(_balance<balance){
+      print("Your accont not enough of money! You need fist deposit money!");
+      return;
+    }
+    else{
+      _balance -=balance;
+      print("Successfully withdraw $balance tk!");
+      return;
+    }
   }
 }
-void main(){
-  BankAccount bankAccount=BankAccount(23);
-  bankAccount.setDeposit(100);
-  print("Deposit ${bankAccount.balance}");
-  bankAccount.setWithdraw(50);
-  print("Withdraw ${bankAccount.balance}");
-}
 
+void main(){
+  BankAccount bankAccount=BankAccount();
+  print("Your acount total money is ${bankAccount.balance}tk");
+
+  print("\nHow much you want to deposit!");
+  double money=double.parse(stdin.readLineSync()!);
+  bankAccount.setDeposit(money);
+  print("Your account total money ${bankAccount.balance}tk");
+
+  print("\nHow much you want to withdraw money!");
+  double moneyWithdraw=double.parse(stdin.readLineSync()!);
+  bankAccount.setWithdraw(moneyWithdraw);
+  print('After withdraw your acoount money ${bankAccount.balance}tk');
+}
 
